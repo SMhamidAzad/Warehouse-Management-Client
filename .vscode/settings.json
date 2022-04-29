@@ -1,0 +1,10 @@
+// {
+//     "workbench.colorCustomizations": {
+//     "[Monokai Dimmed]": {}
+//     }
+// }
+{
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#15a053"
+    },
+}
