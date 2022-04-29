@@ -2,8 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-            <h2>This is footer section</h2>
+        <div className='text-center mt-5'>
+            <p>All reserved Copyright, &copy;2022</p>
+            <p>Contact with us in facebook, youtube, twitter</p>
         </div>
     );
 };
