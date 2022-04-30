@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import auth from '../../../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+      const navigate = useNavigate()
+
     const [userData, setUserData] = useState({
         email: "",
         password: "",
@@ -48,9 +58,14 @@ const SignUp = () => {
         }
     }
    
+    useEffect(()=>{
+        if(user){
+            navigate('/')
+        }
+    },[user])
     const handleSubmitSignUp=e=>{
         e.preventDefault();
-        console.log(userData.email,userData.password,userData.confirmPassword);
+        createUserWithEmailAndPassword(userData.email,userData.password)
     }
     return (
         <div className='ms-5'>

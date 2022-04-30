@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+
+      const navigate = useNavigate()
     const [userData, setUserData] = useState({
         email: "",
         password: ""
@@ -35,9 +45,15 @@ const Login = () => {
             setUserData({ ...userData, password: "" })
         }
     }
+    useEffect(()=>{
+        if(user){
+            navigate('/')
+        }
+    },[user])
     const handleSubmitLogin=e=>{
         e.preventDefault();
         console.log(userData.email,userData.password);
+        signInWithEmailAndPassword(userData.email,userData.password)
     }
     return (
         <div className='ms-5'>
