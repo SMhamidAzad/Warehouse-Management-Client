@@ -8,6 +8,8 @@ import Blogs from './components/Home/Blogs/Blogs';
 import Login from './components/Home/Login/Login/Login';
 import NotFound from './components/Shared/NotFound/NotFound';
 import SignUp from './components/Home/Login/SignUp/SignUp';
+import RequireAuth from './components/Home/Login/RequireAuth/RequireAuth'
+import Inventory from './components/Home/Inventory/Inventory';
 
 function App() {
 
@@ -19,6 +21,11 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/inventory' element={
+          <RequireAuth>
+          <Inventory></Inventory>
+          </RequireAuth>
+          }></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
