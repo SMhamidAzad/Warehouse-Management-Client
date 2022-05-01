@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useReload from '../../hooks/useReload';
 
 const Inventory = () => {
@@ -66,6 +66,9 @@ const Inventory = () => {
                         <button>Update Quantity</button>
                     </form>
                 </div>
+            </div>
+            <div>
+                <Link to='/manage'>Manage Inventory</Link>
             </div>
         </div>
     );
