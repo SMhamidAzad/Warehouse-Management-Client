@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useReload from '../../hooks/useReload';
 import Product from '../Product/Product';
 
@@ -15,11 +16,12 @@ const Products = () => {
             <h2>This is product section</h2>
             <div className='row g-4'>
             {
-                products.map(product => <Product key={product._id}
+                products.slice(0,6).map(product => <Product key={product._id}
                 product={product}
                 ></Product>)
             }
             </div>
+            <Link to='/manage'>Manage Inventory</Link>
         </div>
     );
 };
