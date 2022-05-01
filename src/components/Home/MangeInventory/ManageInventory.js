@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useReload from '../../hooks/useReload';
 import ManageSingleIn from '../ManageSingleIn/ManageSingleIn';
 
@@ -21,6 +22,7 @@ const ManageInventory = () => {
 
                 </ManageSingleIn>)
             }
+            <Link to='/addItem'>Add New Inventory</Link>
         </div>
     );
 };
