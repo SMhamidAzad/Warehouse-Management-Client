@@ -3,6 +3,8 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './Login.css'
+import { BsArrowLeft } from 'react-icons/bs';
 
 const Login = () => {
     const [
@@ -12,7 +14,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-  
+
     const [userData, setUserData] = useState({
         email: "",
         password: ""
@@ -60,23 +62,42 @@ const Login = () => {
             navigate(from, { replace: true });
         }
     }, [user])
-    
+
     return (
-        <div className='ms-5'>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmitLogin}>
-                <input onChange={handleEmailField} type="email" name="email" id="" placeholder='name' />
-                <br />
-                {errors?.emailError && <p className='text-danger'>❌ {errors.emailError}</p>}
-                <br />
-                <input onChange={handlePasswordField} type="password" name="password" id="" placeholder='password' />
-                <br />
-                {errors?.passwordError && <p className='text-danger'>❌{errors.passwordError}</p>}
-                <br />
-                <input type="submit" value="Login" />
-            </form>
-            <p>New in website? Please <Link to='/signup'>Register</Link></p>
-            <SocialLogin></SocialLogin>
+        <div className='d-flex justify-content-center form-container'>
+            <div className='form-div'>
+                <div className='d-flex'>
+                <h2 className='text-white mb-5'>Login</h2>
+                <div className='login-line'></div>
+                </div>
+                <form className='form-style' onSubmit={handleSubmitLogin}>
+                    <input onChange={handleEmailField} type="email" name="email" id="" placeholder='Name' />
+                    <br />
+                    {errors?.emailError && <p className='text-danger'>❌ {errors.emailError}</p>}
+                    <br />
+                    <input onChange={handlePasswordField} type="password" name="password" id="" placeholder='Password' />
+                    <br />
+                    {errors?.passwordError && <p className='text-danger'>❌{errors.passwordError}</p>}
+                    <br />
+                    <div className='d-flex justify-content-between'>
+
+                        <Link className='link' to='/signup'>
+                            <BsArrowLeft></BsArrowLeft>
+                            Sign Up Here</Link>
+                        <input className='primary-btn' type="submit" value="Login" />
+                    </div>
+                </form>
+                <div className='d-flex justify-content-center mt-3'>
+                    <div className='line'>
+
+                    </div>
+                    <p style={{marginTop: '-12px'}} className='mx-3 fw-bold'>Or</p>
+                    <div className='line'>
+
+                    </div>
+                </div>
+                <SocialLogin></SocialLogin>
+            </div>
         </div>
     );
 };
