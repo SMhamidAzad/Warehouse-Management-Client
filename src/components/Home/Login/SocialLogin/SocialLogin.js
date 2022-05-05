@@ -6,9 +6,9 @@ const SocialLogin = () => {
         <>
             <div className='text-center'>
                 <p className='text-white fw-bold'>Continue with-</p>
-                <button className='px-5 border-0 py-1 rounded'>
+                <button className='px-5 border-0 rounded bg-danger'>
                     <img src={Google} alt="" />
-                    Google
+                    <small className='fw-bold text-white'>Google</small>
                 </button>
             </div>
         </>

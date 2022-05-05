@@ -87,7 +87,8 @@ const Login = () => {
                         <input className='primary-btn' type="submit" value="Login" />
                     </div>
                 </form>
-                <div className='d-flex justify-content-center mt-3'>
+                <div className='mt-5'>
+                <div className='d-flex justify-content-center mt-4'>
                     <div className='line'>
 
                     </div>
@@ -97,6 +98,7 @@ const Login = () => {
                     </div>
                 </div>
                 <SocialLogin></SocialLogin>
+                </div>
             </div>
         </div>
     );

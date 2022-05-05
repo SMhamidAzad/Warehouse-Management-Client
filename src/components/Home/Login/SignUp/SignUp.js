@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { BsArrowLeft } from 'react-icons/bs';
 
 const SignUp = () => {
     const [
@@ -68,24 +69,61 @@ const SignUp = () => {
         createUserWithEmailAndPassword(userData.email,userData.password)
     }
     return (
-        <div className='ms-5'>
-            <h2>Signup</h2>
-            <form onSubmit={handleSubmitSignUp}>
-                <input onChange={handleEmailField} type="email" name="email" id="" placeholder='name'/>
-                <br />
-                {errors?.emailError && <p className='text-danger'>❌ {errors.emailError}</p>}
-                <br />
-                <input onChange={handlePasswordField} type="password" name="password" id="" placeholder='password'/>
-                <br />
-                {errors?.passwordError && <p className='text-danger'>❌{errors.passwordError}</p>}
-                <br />
-                <input onChange={handleConfirmPasswordField} type="password" name="confirmPassword" id="" placeholder='confirm password'/>
-                <br />
-                <br />
-                <input type="submit" value="Signup" />
-            </form>
-            <p>Already have an account? Please <Link to='/login'>Login</Link></p>
-            <SocialLogin></SocialLogin>
+        // <div className='ms-5'>
+        //     <h2>Signup</h2>
+        //     <form onSubmit={handleSubmitSignUp}>
+        //         <input onChange={handleEmailField} type="email" name="email" id="" placeholder='name'/>
+        //         <br />
+        //         {errors?.emailError && <p className='text-danger'>❌ {errors.emailError}</p>}
+        //         <br />
+        //         <input onChange={handlePasswordField} type="password" name="password" id="" placeholder='password'/>
+        //         <br />
+        //         {errors?.passwordError && <p className='text-danger'>❌{errors.passwordError}</p>}
+        //         <br />
+        //         <input onChange={handleConfirmPasswordField} type="password" name="confirmPassword" id="" placeholder='confirm password'/>
+        //         <br />
+        //         <br />
+        //         <input type="submit" value="Signup" />
+        //     </form>
+        //     <p>Already have an account? Please <Link to='/login'>Login</Link></p>
+        //     <SocialLogin></SocialLogin>
+        // </div>
+        <div className='d-flex justify-content-center form-container'>
+            <div className='form-div'>
+                <div className='d-flex'>
+                <h2 className='text-white mb-5'>Signup</h2>
+                <div className='login-line'></div>
+                </div>
+                <form className='form-style' onSubmit={handleSubmitSignUp}>
+                    <input onChange={handleEmailField} type="email" name="email" id="" placeholder='Email' />
+                    <br />
+                    {errors?.emailError && <p className='text-danger'>❌ {errors.emailError}</p>}
+                    <br />
+                    <input onChange={handlePasswordField} type="password" name="password" id="" placeholder='Password' />
+                    <br />
+                    {errors?.passwordError && <p className='text-danger'>❌{errors.passwordError}</p>}
+                    <br />
+                    <input className='mb-4' onChange={handleConfirmPasswordField} type="password" name="confirmPassword" id="" placeholder='confirm password'/>
+                    <br />
+                    <div className='d-flex justify-content-between'>
+
+                        <Link className='link' to='/login'>
+                            <BsArrowLeft></BsArrowLeft>
+                            Back To Login</Link>
+                        <input className='primary-btn' type="submit" value="Signup" />
+                    </div>
+                </form>
+                <div className='d-flex justify-content-center mt-3'>
+                    <div className='line'>
+
+                    </div>
+                    <p style={{marginTop: '-12px'}} className='mx-3 fw-bold'>Or</p>
+                    <div className='line'>
+
+                    </div>
+                </div>
+                <SocialLogin></SocialLogin>
+            </div>
         </div>
     );
 };
