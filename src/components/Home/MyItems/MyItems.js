@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import MyItem from '../MyItem/MyItem';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -27,9 +28,15 @@ const MyItems = () => {
     })
     return (
         <div>
-            <h2>This is my item components</h2>
+            <h2>All of my items</h2>
             <h1>{myItems.length}</h1>
             <h5><small>--------------</small> {myItems[0]?.email}</h5>
+            {
+                myItems.map(myitem => <MyItem
+                key={myitem._id}
+                myitem={myitem}
+                ></MyItem>)
+            }
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import './AddInventory.css'
 
 const AddInventory = () => {
     const [user]=useAuthState(auth)
@@ -35,9 +36,10 @@ const AddInventory = () => {
         })
     }
     return (
-        <div>
-            <h1>This is add inventory page</h1>
-            <form onSubmit={handleNewInventory}>
+        <div className='d-flex justify-content-center form-container'>
+            <div className='form-div'>
+            <h1 className='text-white py-3'>Add Your Inventory Here</h1>
+            <form className='addItem-form' onSubmit={handleNewInventory}>
                <input type="text" name="name" id="" placeholder='name'/>
                <br />
                <input type="text" name="img" id="" placeholder='photo URL'/>
@@ -50,8 +52,9 @@ const AddInventory = () => {
                <br />
                <input type="text" name="supplierName" id="" placeholder='Supplier Name'/>
                <br />
-               <input type="submit" value="Add Item" />
+               <input className='addForm-btn' type="submit" value="Add Item" />
             </form>
+            </div>
         </div>
     );
 };

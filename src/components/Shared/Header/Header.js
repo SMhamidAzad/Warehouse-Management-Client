@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <Navbar className='nav-style' collapseOnSelect expand="lg" >
         <Container>
-        <Navbar.Brand className='text-white'>Tiles Warehouse</Navbar.Brand>
+        <Navbar.Brand className='text-white'>Prime Door Pro.</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">

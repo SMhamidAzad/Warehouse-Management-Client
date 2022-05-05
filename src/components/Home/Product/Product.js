@@ -1,5 +1,6 @@
 import React from 'react';
 import {  useNavigate } from 'react-router-dom';
+import './Product.css'
 
 const Product = ({product}) => {
     const {_id,name,img,description,price,quantity,supplierName
@@ -10,7 +11,7 @@ const Product = ({product}) => {
     }
     return (
         <div className='card col-md-4 text-center'>
-            <img src={img} alt="" />
+            <img className='product-pic' src={img} alt="" />
             <h5>{name}</h5>
             <p>{description}</p>
             <h4>price: ${price}</h4>

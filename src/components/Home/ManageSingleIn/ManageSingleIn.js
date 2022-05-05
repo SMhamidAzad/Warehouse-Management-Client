@@ -21,14 +21,14 @@ const ManageSingleIn = ({ product }) => {
             fetch(url, {
                 method: 'DELETE'
             })
-                .then(res => res.json())
+                .then(res =>res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
+                        setIsReload(!isReload)
 
                         console.log('deleted');
                         const remaining = products.filter(product => product._id !== id);
                         setProducts(remaining);
-                        setIsReload(!isReload)
                     }
                 })
         }

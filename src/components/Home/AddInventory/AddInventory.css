@@ -1,0 +1,15 @@
+.addItem-form input{
+    width: 100%;
+    background-color: #021B29;
+      color: white;
+      font-weight: 500;
+      outline: none;
+      border: 0;
+      padding: 10px;
+      border-radius: 25px;
+      margin-bottom: 10px;
+}
+.addForm-btn{
+    background-color: #F2A70C !important;
+    color: black !important;
+}
