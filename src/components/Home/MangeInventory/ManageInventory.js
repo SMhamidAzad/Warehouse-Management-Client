@@ -8,14 +8,14 @@ const ManageInventory = () => {
     const [products, setProducts] = useState([])
     const [isReload, setIsReload] = useReload();
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://blooming-hollows-74511.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [isReload])
     return (
-        <div style={{backgroundColor: '#021B29'}} className='pb-5'>
-            <h2 className='text-center py-2 text-white'>Manage inventory</h2>
-            <Table style={{backgroundColor: '#021B29', color: 'white'}}  bordered  >
+        <div style={{ backgroundColor: '#021B29', height: '90vh' }} className='pb-5'>
+            <h2 className='text-center py-5 text-white'>Manage inventory</h2>
+            <Table style={{ backgroundColor: '#021B29', color: 'white' }} bordered  >
                 <thead>
                     <tr>
                         <th>Product Name</th>
@@ -25,8 +25,8 @@ const ManageInventory = () => {
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>                  
-                   {
+                <tbody>
+                    {
                         products.map(product => <ManageSingleIn
                             key={product._id}
                             product={product}
@@ -37,7 +37,7 @@ const ManageInventory = () => {
                 </tbody>
             </Table>
 
-            <Link to='/addItem'>Add New Inventory</Link>
+            <Link className='primary-btn' to='/addItem'>Add New Inventory</Link>
         </div>
     );
 };

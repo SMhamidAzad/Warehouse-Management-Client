@@ -13,7 +13,7 @@ import Inventory from './components/Home/Inventory/Inventory';
 import ManageInventory from './components/Home/MangeInventory/ManageInventory';
 import AddInventory from './components/Home/AddInventory/AddInventory';
 import MyItems from './components/Home/MyItems/MyItems';
-
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   return (

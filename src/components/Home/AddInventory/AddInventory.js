@@ -4,8 +4,8 @@ import auth from '../../../firebase.init';
 import './AddInventory.css'
 
 const AddInventory = () => {
-    const [user]=useAuthState(auth)
-    const handleNewInventory = e=>{
+    const [user] = useAuthState(auth)
+    const handleNewInventory = e => {
         e.preventDefault();
         const email = user.email;
         const name = e.target.name.value;
@@ -17,43 +17,43 @@ const AddInventory = () => {
 
         console.log(typeof price);
         console.log(typeof quantity);
-        const product = {email,name,img,description,price,quantity,supplierName};
+        const product = { email, name, img, description, price, quantity, supplierName };
         console.log(product);
 
 
-        fetch('http://localhost:5000/product',{
+        fetch('https://blooming-hollows-74511.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(product)
         })
-        .then(res => res.json())
-        .then(data=>{
-            console.log("Added New Item ",data);
-            alert('successfully new inventory added')
-            e.target.reset()
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("Added New Item ", data);
+                alert('successfully new inventory added')
+                e.target.reset()
+            })
     }
     return (
         <div className='d-flex justify-content-center form-container'>
             <div className='form-div'>
-            <h1 className='text-white py-3'>Add Your Inventory Here</h1>
-            <form className='addItem-form' onSubmit={handleNewInventory}>
-               <input type="text" name="name" id="" placeholder='name'/>
-               <br />
-               <input type="text" name="img" id="" placeholder='photo URL'/>
-               <br />
-               <input type="text" name="description" id="" placeholder='description'/>
-               <br />
-               <input type="text" name="price" id="" placeholder='price'/>
-               <br />
-               <input type="text" name="quantity" id="" placeholder='quantity'/>
-               <br />
-               <input type="text" name="supplierName" id="" placeholder='Supplier Name'/>
-               <br />
-               <input className='addForm-btn' type="submit" value="Add Item" />
-            </form>
+                <h1 className='text-white py-3'>Add Your Inventory Here</h1>
+                <form className='addItem-form' onSubmit={handleNewInventory}>
+                    <input type="text" name="name" id="" placeholder='name' />
+                    <br />
+                    <input type="text" name="img" id="" placeholder='photo URL' />
+                    <br />
+                    <input type="text" name="description" id="" placeholder='description' />
+                    <br />
+                    <input type="text" name="price" id="" placeholder='price' />
+                    <br />
+                    <input type="text" name="quantity" id="" placeholder='quantity' />
+                    <br />
+                    <input type="text" name="supplierName" id="" placeholder='Supplier Name' />
+                    <br />
+                    <input className='addForm-btn' type="submit" value="Add Item" />
+                </form>
             </div>
         </div>
     );

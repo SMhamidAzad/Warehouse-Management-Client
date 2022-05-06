@@ -4,6 +4,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { BsArrowLeft } from 'react-icons/bs';
+import { toast, ToastContainer } from 'react-toastify';
 
 const SignUp = () => {
     const [
@@ -11,8 +12,8 @@ const SignUp = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      const navigate = useNavigate()
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate()
 
     const [userData, setUserData] = useState({
         email: "",
@@ -24,7 +25,7 @@ const SignUp = () => {
         passwordError: ""
     })
 
-    const handleEmailField=e=>{
+    const handleEmailField = e => {
         const emailInput = e.target.value;
         const emailRegx = /\S+@\S+\.\S+/;
         if (emailRegx.test(emailInput)) {
@@ -36,7 +37,7 @@ const SignUp = () => {
             setUserData({ ...userData, email: "" })
         }
     }
-    const handlePasswordField=e=>{
+    const handlePasswordField = e => {
         const passwordInput = e.target.value;
         if (passwordInput.length >= 6) {
             setUserData({ ...userData, password: passwordInput });
@@ -47,7 +48,7 @@ const SignUp = () => {
             setUserData({ ...userData, password: "" })
         }
     }
-    const handleConfirmPasswordField=e=>{
+    const handleConfirmPasswordField = e => {
         const confirmPasswordField = e.target.value;
         if (confirmPasswordField === userData.password) {
             setUserData({ ...userData, confirmPassword: confirmPasswordField });
@@ -58,41 +59,31 @@ const SignUp = () => {
             setUserData({ ...userData, confirmPassword: "" })
         }
     }
-   
-    useEffect(()=>{
-        if(user){
+
+    useEffect(() => {
+        if (user) {
             navigate('/')
         }
-    },[user])
-    const handleSubmitSignUp=e=>{
+    }, [user])
+    const handleSubmitSignUp = e => {
         e.preventDefault();
-        createUserWithEmailAndPassword(userData.email,userData.password)
+        createUserWithEmailAndPassword(userData.email, userData.password)
     }
+    useEffect(()=>{
+        if(error){
+            // console.log(error.message);
+            toast.error(error.message,{
+                position: "top-center",
+            })
+        }
+    },[error])
     return (
-        // <div className='ms-5'>
-        //     <h2>Signup</h2>
-        //     <form onSubmit={handleSubmitSignUp}>
-        //         <input onChange={handleEmailField} type="email" name="email" id="" placeholder='name'/>
-        //         <br />
-        //         {errors?.emailError && <p className='text-danger'>❌ {errors.emailError}</p>}
-        //         <br />
-        //         <input onChange={handlePasswordField} type="password" name="password" id="" placeholder='password'/>
-        //         <br />
-        //         {errors?.passwordError && <p className='text-danger'>❌{errors.passwordError}</p>}
-        //         <br />
-        //         <input onChange={handleConfirmPasswordField} type="password" name="confirmPassword" id="" placeholder='confirm password'/>
-        //         <br />
-        //         <br />
-        //         <input type="submit" value="Signup" />
-        //     </form>
-        //     <p>Already have an account? Please <Link to='/login'>Login</Link></p>
-        //     <SocialLogin></SocialLogin>
-        // </div>
+
         <div className='d-flex justify-content-center form-container'>
             <div className='form-div'>
                 <div className='d-flex'>
-                <h2 className='text-white mb-5'>Signup</h2>
-                <div className='login-line'></div>
+                    <h2 className='text-white mb-5'>Signup</h2>
+                    <div className='login-line'></div>
                 </div>
                 <form className='form-style' onSubmit={handleSubmitSignUp}>
                     <input onChange={handleEmailField} type="email" name="email" id="" placeholder='Email' />
@@ -103,7 +94,7 @@ const SignUp = () => {
                     <br />
                     {errors?.passwordError && <p className='text-danger'>❌{errors.passwordError}</p>}
                     <br />
-                    <input className='mb-4' onChange={handleConfirmPasswordField} type="password" name="confirmPassword" id="" placeholder='confirm password'/>
+                    <input className='mb-4' onChange={handleConfirmPasswordField} type="password" name="confirmPassword" id="" placeholder='confirm password' />
                     <br />
                     <div className='d-flex justify-content-between'>
 
@@ -117,13 +108,16 @@ const SignUp = () => {
                     <div className='line'>
 
                     </div>
-                    <p style={{marginTop: '-12px'}} className='mx-3 fw-bold'>Or</p>
+                    <p style={{ marginTop: '-12px' }} className='mx-3 fw-bold'>Or</p>
                     <div className='line'>
 
                     </div>
                 </div>
                 <SocialLogin></SocialLogin>
             </div>
+            <ToastContainer
+            position="top-center"
+            ></ToastContainer>
         </div>
     );
 };

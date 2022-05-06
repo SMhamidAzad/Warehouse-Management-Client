@@ -5,6 +5,7 @@ import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 import { BsArrowLeft } from 'react-icons/bs';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
     const [
@@ -62,6 +63,14 @@ const Login = () => {
             navigate(from, { replace: true });
         }
     }, [user])
+    useEffect(()=>{
+        if(error){
+            // console.log(error.message);
+            toast.error(error.message,{
+                position: "top-center",
+            })
+        }
+    },[error])
 
     return (
         <div className='d-flex justify-content-center form-container'>
@@ -100,6 +109,9 @@ const Login = () => {
                 <SocialLogin></SocialLogin>
                 </div>
             </div>
+            <ToastContainer
+            position="top-center"
+            ></ToastContainer>
         </div>
     );
 };
