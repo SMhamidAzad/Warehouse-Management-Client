@@ -44,7 +44,6 @@ const Inventory = () => {
         e.preventDefault();
         const updateQuantity = parseInt(e.target.quantity.value);
         console.log(typeof updateQuantity);
-
         UpdateQuantity(updateQuantity)
     }
     return (

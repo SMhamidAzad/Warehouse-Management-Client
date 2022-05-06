@@ -27,16 +27,16 @@ const MyItems = () => {
         console.log(data);
     })
     return (
-        <div>
-            <h2>All of my items</h2>
-            <h1>{myItems.length}</h1>
-            <h5><small>--------------</small> {myItems[0]?.email}</h5>
+        <div className='py-4' style={{backgroundColor: '#021B29'}}>
+            <h2 className='text-center text-white'>All of my items</h2>
+            <div className='container'>
             {
                 myItems.map(myitem => <MyItem
                 key={myitem._id}
                 myitem={myitem}
                 ></MyItem>)
             }
+            </div>
         </div>
     );
 };
