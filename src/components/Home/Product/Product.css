@@ -1,3 +1,18 @@
 .product-pic{
-    width: 20vh;
+    height: 200px !important;
+    border: 4px solid #F2A70C;
+    border-radius: 5px;
+}
+.update-btn{
+    background-color: #F2A70C;
+    border-radius: 25px;
+    border: none;
+    padding: 5px 15px;
+    font-weight: 500;
+}
+.product-card{
+    background-color: #042131;
+}
+.product-card:hover{
+    background-color: #17445c;
 }
