@@ -1,0 +1,20 @@
+.recommanded-btn small{
+    border: 1px solid gray;
+    color: black;
+    width: 120px;
+    background-color: #F2A70C;
+}
+.price-div{
+    margin-top: 65px;
+    background-color: white;
+    padding-left: 20px;
+    font-weight: 700;
+    margin-right: 50px;
+    color: gray;
+}
+.price-first-part{
+    font-size: 40px;
+}
+.price-last-part{
+    font-size: 32px;
+}
