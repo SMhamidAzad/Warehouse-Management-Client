@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -7,26 +8,19 @@ const MyItems = () => {
     const [user] = useAuthState(auth);
     const [myItems, setMyItems] = useState([])
     const email = user.email;
-    const url = `https://blooming-hollows-74511.herokuapp.com/product?email=${email}`;
-    useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data[0]);
-                setMyItems(data)
+    const url = `http://localhost:5000/product?email=${email}`;
+    useEffect(()=>{
+        const getMyItems = async()=>{
+            const {data} = await axios.get(url,{
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
             })
-    }, [])
-    // fetch(url, {
-    //     method: 'GET',
-    //     headers: {
-    //         'content-type': 'application/json'
-    //     },
-    //     body: JSON.stringify(myItems)
-    // })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
-    //     })
+            setMyItems(data)
+        }
+        getMyItems();
+    },[])
+
     return (
         <div className='py-4' style={{ backgroundColor: '#021B29' }}>
             <h2 className='text-center text-white'>All of my items</h2>

@@ -7,6 +7,7 @@ import './Login.css'
 import { BsArrowLeft } from 'react-icons/bs';
 import { toast, ToastContainer } from 'react-toastify';
 import Loading from '../../Loading/Loading';
+import axios from 'axios';
 
 const Login = () => {
     const [
@@ -50,10 +51,15 @@ const Login = () => {
         }
     }
 
-    const handleSubmitLogin = e => {
+    const handleSubmitLogin =async e => {
         e.preventDefault();
-        console.log(userData.email, userData.password);
-        signInWithEmailAndPassword(userData.email, userData.password)
+        const email = userData.email;
+        // console.log(email);
+        await signInWithEmailAndPassword(userData.email, userData.password)
+        const {data} =await axios.post('http://localhost:5000/gettoken',{email})
+        console.log(data);
+        localStorage.setItem('accessToken',data.accessToken)
+        navigate(from, { replace: true });
     }
 
     const navigate = useNavigate();
@@ -61,7 +67,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     useEffect(() => {
         if (user) {
-            navigate(from, { replace: true });
+            // navigate(from, { replace: true });
         }
     }, [user])
     useEffect(()=>{

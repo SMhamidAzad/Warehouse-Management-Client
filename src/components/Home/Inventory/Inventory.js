@@ -8,7 +8,7 @@ const Inventory = () => {
     const [product, setProduct] = useState({});
     const [isReload, setIsReload] = useReload()
     useEffect(() => {
-        const url = `https://blooming-hollows-74511.herokuapp.com/product/${id}`;
+        const url = `http://localhost:5000/product/${id}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -18,7 +18,7 @@ const Inventory = () => {
 
 
     const UpdateQuantity = (newQuantity) => {
-        const url = `https://blooming-hollows-74511.herokuapp.com/product/${id}`;
+        const url = `http://localhost:5000/product/${id}`;
 
         fetch(url, {
             method: 'PUT',
@@ -43,7 +43,8 @@ const Inventory = () => {
     }
     const handleUpdateQuantity = e => {
         e.preventDefault();
-        const updateQuantity = parseInt(e.target.quantity.value);
+        const prouductQuantity = product.quantity;
+        const updateQuantity = parseInt(e.target.quantity.value) + prouductQuantity;
         console.log(typeof updateQuantity);
         UpdateQuantity(updateQuantity)
     }
