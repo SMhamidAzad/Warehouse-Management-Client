@@ -16,17 +16,17 @@ const MyItems = () => {
                 setMyItems(data)
             })
     }, [])
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(myItems)
-    })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+    // fetch(url, {
+    //     method: 'GET',
+    //     headers: {
+    //         'content-type': 'application/json'
+    //     },
+    //     body: JSON.stringify(myItems)
+    // })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data);
+    //     })
     return (
         <div className='py-4' style={{ backgroundColor: '#021B29' }}>
             <h2 className='text-center text-white'>All of my items</h2>

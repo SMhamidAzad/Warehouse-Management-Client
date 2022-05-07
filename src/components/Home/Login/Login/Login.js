@@ -6,6 +6,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 import { BsArrowLeft } from 'react-icons/bs';
 import { toast, ToastContainer } from 'react-toastify';
+import Loading from '../../Loading/Loading';
 
 const Login = () => {
     const [
@@ -72,6 +73,11 @@ const Login = () => {
         }
     },[error])
 
+    useEffect(()=>{
+        if(loading){
+            return <Loading></Loading>
+        }
+    },[])
     return (
         <div className='d-flex justify-content-center form-container'>
             <div className='form-div'>

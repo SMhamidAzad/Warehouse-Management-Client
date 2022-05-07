@@ -6,8 +6,6 @@ const MyItem = ({myitem}) => {
     const {name,img,price,quantity,supplierName}=myitem;
     return (
         <div className='row my-item p-2'>
-            {/* <img src={img} alt="" />
-            <p>{name}</p> */}
             <div className="col-md-4">
                 <img className='w-25 rounded-circle' src={img} alt="" />
             </div>

@@ -5,6 +5,7 @@ import auth from '../../../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { BsArrowLeft } from 'react-icons/bs';
 import { toast, ToastContainer } from 'react-toastify';
+import Loading from '../../Loading/Loading';
 
 const SignUp = () => {
     const [
@@ -65,6 +66,12 @@ const SignUp = () => {
             navigate('/')
         }
     }, [user])
+
+    useEffect(()=>{
+        if(loading){
+            return <Loading></Loading>
+        }
+    },[])
     const handleSubmitSignUp = e => {
         e.preventDefault();
         createUserWithEmailAndPassword(userData.email, userData.password)

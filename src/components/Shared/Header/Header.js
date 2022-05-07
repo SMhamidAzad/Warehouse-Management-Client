@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <Navbar className='nav-style' collapseOnSelect expand="lg" >
         <Container>
-        <Navbar.Brand className='text-white fw-bold fs-3'>
+        <Navbar.Brand className='text-white fw-bold fs-2'>
         ₱rime door pro.
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

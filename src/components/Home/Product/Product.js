@@ -11,15 +11,6 @@ const Product = ({ product }) => {
         navigate(`/inventory/${id}`)
     }
     return (
-        // <div className='card col-md-4 text-center'>
-        //     <img className='product-pic' src={img} alt="" />
-        //     <h5>{name}</h5>
-        //     <p>{description}</p>
-        //     <h4>price: ${price}</h4>
-        //     <h4>quantity: {quantity}</h4>
-        //     <h6>Supplier Name: {supplierName}</h6>
-        //     <button onClick={()=>navigateToInventory(_id)}>Update</button>
-        // </div>
         <div className="col">
             <div className="card h-100 text-center text-white product-card pt-2">
                 <img src={img} className="card-img-top product-pic w-50 mx-auto" alt="..." />
