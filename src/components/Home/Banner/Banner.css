@@ -12,3 +12,20 @@
     padding: 10px 30px;
     border-radius: 25px;
 }
+@media screen and (max-width: 688px) {
+    .banner-part-first{
+      margin-bottom: -350px;
+    }
+    .banner-title{
+        padding-top: 50px;
+        font-size: 35px;
+        line-height: 0.2;
+    }
+    p{
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .banner-part-last img{
+        margin-bottom: -290px;
+    }
+}

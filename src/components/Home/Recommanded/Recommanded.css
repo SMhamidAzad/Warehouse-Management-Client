@@ -1,20 +1,35 @@
-.recommanded-btn small{
-    border: 1px solid gray;
+.recommanded-btn small {
+    border: 1px solid #94A3B8;
     color: black;
     width: 120px;
     background-color: #F2A70C;
 }
-.price-div{
+
+.price-div {
     margin-top: 65px;
     background-color: white;
     padding-left: 20px;
     font-weight: 700;
     margin-right: 50px;
-    color: gray;
+    color: #94A3B8;
 }
-.price-first-part{
+
+.price-first-part {
     font-size: 40px;
 }
-.price-last-part{
+
+.price-last-part {
     font-size: 32px;
+}
+@media screen and (max-width: 688px) {
+  .recommanded-img{
+      text-align: center;
+  }
+  .recommanded-btn small{
+    width: 102px;
+  }
+  .price-div{
+      font-size: 30px;
+      margin-bottom: 20px;
+  }
 }

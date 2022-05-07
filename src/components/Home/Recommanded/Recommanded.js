@@ -17,8 +17,8 @@ const Recommanded = () => {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="row">
-                                <div className="col-md-6">
-                                    <img className='w-75' src={recommanded1} alt="" />
+                                <div className="col-md-6 recommanded-img">
+                                    <img  className='w-75' src={recommanded1} alt="" />
                                 </div>
                                 <div style={{ backgroundColor: '#01151F' }} className="col-md-6 ps-5 pe-3">
                                     <h1 className='text-white py-5'>Highly Recommanded</h1>
@@ -37,8 +37,8 @@ const Recommanded = () => {
                         </div>
                         <div className="carousel-item">
                             <div className="row">
-                                <div className="col-md-6">
-                                    <img className='w-75' src={recommanded2} alt="" />
+                                <div className="col-md-6 recommanded-img">
+                                    <img className='w-75 ' src={recommanded2} alt="" />
                                 </div>
                                 <div style={{ backgroundColor: '#01151F' }} className="col-md-6 ps-5 pe-3">
                                     <h1 className='text-white py-5'>Highly Recommanded</h1>
@@ -58,7 +58,7 @@ const Recommanded = () => {
                         </div>
                         <div className="carousel-item">
                             <div className="row">
-                                <div className="col-md-6">
+                                <div className="col-md-6 recommanded-img">
                                     <img className='w-75' src={recommanded3} alt="" />
                                 </div>
                                 <div style={{ backgroundColor: '#01151F' }} className="col-md-6 ps-5 pe-3">

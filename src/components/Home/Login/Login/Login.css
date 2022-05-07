@@ -1,18 +1,21 @@
-.form-container{
+.form-container {
       background-color: #021B29;
       height: 100vh;
 }
-.form-div{
+
+.form-div {
       background-color: #01151F;
       height: 80vh;
       margin-top: 25px;
       padding: 30px;
       border-radius: 15px;
 }
-.form-div:hover{
-    border: 1px solid white;
+
+.form-div:hover {
+      border: 1px solid white;
 }
-.form-style input:not([type=submit]){
+
+.form-style input:not([type=submit]) {
       width: 350px;
       background-color: #021B29;
       color: white;
@@ -22,28 +25,39 @@
       padding: 10px;
       border-radius: 25px;
 }
-.primary-btn{
+
+.primary-btn {
       background-color: #F2A70C;
       border: none;
       padding: 5px 20px;
       border-radius: 25px;
       font-weight: 500;
 }
-.link{
+
+.link {
       text-decoration: none;
-      color: gray;
+      color: #94A3B8;
       font-weight: 500;
 }
-.link:hover{
+
+.link:hover {
       color: #F2A70C;
       text-decoration: underline;
 }
-.line{
-      border-top: 1px solid gray;
+
+.line {
+      border-top: 1px solid #94A3B8;
       width: 20%;
 }
-.login-line{
+
+.login-line {
       border-top: 2px solid #F2A70C;
       width: 20%;
       margin-top: 20px;
+}
+@media screen and (max-width: 688px) {
+      .form-div{
+            width: 98%;
+            height: 62vh;
+      }
 }
