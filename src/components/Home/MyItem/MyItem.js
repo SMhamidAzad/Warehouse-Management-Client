@@ -33,8 +33,8 @@ const MyItem = ({ myitem }) => {
                 <img className='w-25 rounded-circle' src={img} alt="" />
             </div>
             <div className="col-md-6">
-                <h4>Product Name: {name}</h4>
-                <p>Suppier Name: {supplierName}</p>
+                <h4><u>Product Name</u>:   {name}</h4>
+                <p><u>Suppier Name</u>:   {supplierName}</p>
                 <button className='bg-danger text-white border-0 rounded' onClick={() => handleDeleteBtn(_id)}>Delete</button>
             </div>
             <div className="col-md-2">

@@ -16,7 +16,7 @@ const Product = ({ product }) => {
                 <img src={img} className="card-img-top product-pic w-50 mx-auto" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <p style={{ color: '#94A3B8' }} className="card-text">{description}</p>
+                    <p style={{ color: '#94A3B8' }} className="card-text pb-2">{description}</p>
                     <p style={{ marginTop: '-15px' }}>Quantity: {quantity}</p>
                     <h2 style={{ marginTop: '-15px' }}>${price}</h2>
 

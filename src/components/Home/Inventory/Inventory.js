@@ -44,7 +44,7 @@ const Inventory = () => {
     const handleUpdateQuantity = e => {
         e.preventDefault();
         const prouductQuantity = product.quantity;
-        const updateQuantity = parseInt(e.target.quantity.value) + prouductQuantity;
+        const updateQuantity = parseInt(e.target.quantity.value) + parseInt(prouductQuantity);
         console.log(typeof updateQuantity);
         UpdateQuantity(updateQuantity)
     }
@@ -69,7 +69,7 @@ const Inventory = () => {
                         </form>
                     </div>
                 </div>
-                <div className='mt-4'>
+                <div className='mt-4 manage-btn'>
                     <Link className='primary-btn' to='/manage'>Manage Inventory</Link>
                 </div>
             </div>
