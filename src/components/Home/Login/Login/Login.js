@@ -51,14 +51,14 @@ const Login = () => {
         }
     }
 
-    const handleSubmitLogin =async e => {
+    const handleSubmitLogin = async e => {
         e.preventDefault();
         const email = userData.email;
         // console.log(email);
         await signInWithEmailAndPassword(userData.email, userData.password)
-        const {data} =await axios.post('http://localhost:5000/gettoken',{email})
+        const { data } = await axios.post('https://blooming-hollows-74511.herokuapp.com/gettoken', { email })
         console.log(data);
-        localStorage.setItem('accessToken',data.accessToken)
+        localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
     }
 
@@ -70,26 +70,26 @@ const Login = () => {
             // navigate(from, { replace: true });
         }
     }, [user])
-    useEffect(()=>{
-        if(error){
+    useEffect(() => {
+        if (error) {
             // console.log(error.message);
-            toast.error(error.message,{
+            toast.error(error.message, {
                 position: "top-center",
             })
         }
-    },[error])
+    }, [error])
 
-    useEffect(()=>{
-        if(loading){
+    useEffect(() => {
+        if (loading) {
             return <Loading></Loading>
         }
-    },[])
+    }, [])
     return (
         <div className='d-flex justify-content-center form-container'>
             <div className='form-div'>
                 <div className='d-flex'>
-                <h2 className='text-white mb-5'>Login</h2>
-                <div className='login-line'></div>
+                    <h2 className='text-white mb-5'>Login</h2>
+                    <div className='login-line'></div>
                 </div>
                 <form className='form-style' onSubmit={handleSubmitLogin}>
                     <input onChange={handleEmailField} type="email" name="email" id="" placeholder='Name' />
@@ -109,20 +109,20 @@ const Login = () => {
                     </div>
                 </form>
                 <div className='mt-5'>
-                <div className='d-flex justify-content-center mt-4'>
-                    <div className='line'>
+                    <div className='d-flex justify-content-center mt-4'>
+                        <div className='line'>
 
-                    </div>
-                    <p style={{marginTop: '-12px'}} className='mx-3 fw-bold'>Or</p>
-                    <div className='line'>
+                        </div>
+                        <p style={{ marginTop: '-12px' }} className='mx-3 fw-bold'>Or</p>
+                        <div className='line'>
 
+                        </div>
                     </div>
-                </div>
-                <SocialLogin></SocialLogin>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
             <ToastContainer
-            position="top-center"
+                position="top-center"
             ></ToastContainer>
         </div>
     );

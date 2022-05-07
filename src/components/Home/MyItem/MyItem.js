@@ -5,14 +5,14 @@ const MyItem = ({ myitem }) => {
     const { _id, name, img, price, quantity, supplierName } = myitem;
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://blooming-hollows-74511.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
     const handleDeleteBtn = id => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://blooming-hollows-74511.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

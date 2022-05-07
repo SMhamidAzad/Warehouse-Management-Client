@@ -8,10 +8,10 @@ const MyItems = () => {
     const [user] = useAuthState(auth);
     const [myItems, setMyItems] = useState([])
     const email = user.email;
-    const url = `http://localhost:5000/product?email=${email}`;
-    useEffect(()=>{
-        const getMyItems = async()=>{
-            const {data} = await axios.get(url,{
+    const url = `https://blooming-hollows-74511.herokuapp.com/product?email=${email}`;
+    useEffect(() => {
+        const getMyItems = async () => {
+            const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -19,7 +19,7 @@ const MyItems = () => {
             setMyItems(data)
         }
         getMyItems();
-    },[])
+    }, [])
 
     return (
         <div className='py-4' style={{ backgroundColor: '#021B29' }}>

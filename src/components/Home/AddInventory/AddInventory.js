@@ -21,7 +21,7 @@ const AddInventory = () => {
         console.log(product);
 
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://blooming-hollows-74511.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

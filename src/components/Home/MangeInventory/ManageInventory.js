@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useProduct from '../../hooks/useProduct';
 import useReload from '../../hooks/useReload';
 import ManageSingleIn from '../ManageSingleIn/ManageSingleIn';
 
 const ManageInventory = () => {
-    const [products, setProducts] = useState([])
-    const [isReload, setIsReload] = useReload();
-    useEffect(() => {
-        fetch('http://localhost:5000/product')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [isReload])
+    const [products, setProducts] = useProduct()
+    
     return (
         <div style={{ backgroundColor: '#021B29', height: '90vh' }} className='pb-5'>
             <h2 className='text-center py-5 text-white'>Manage inventory</h2>

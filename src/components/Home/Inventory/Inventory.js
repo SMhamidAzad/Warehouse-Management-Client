@@ -8,7 +8,7 @@ const Inventory = () => {
     const [product, setProduct] = useState({});
     const [isReload, setIsReload] = useReload()
     useEffect(() => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://blooming-hollows-74511.herokuapp.com/product/${id}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -18,7 +18,7 @@ const Inventory = () => {
 
 
     const UpdateQuantity = (newQuantity) => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://blooming-hollows-74511.herokuapp.com/product/${id}`;
 
         fetch(url, {
             method: 'PUT',

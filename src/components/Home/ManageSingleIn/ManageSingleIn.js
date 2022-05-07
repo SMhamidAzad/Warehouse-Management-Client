@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import useProduct from '../../hooks/useProduct';
 import useReload from '../../hooks/useReload';
 import Products from '../Products/Products';
 
 const ManageSingleIn = ({ product }) => {
     const { _id, img, name, price, supplierName, quantity } = product;
 
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/product')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [product])
+    const [products, setProducts] = useProduct()
+
     const handleDeleteBtn = id => {
-        // console.log("deleted",id);
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting user with id, ', id);
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://blooming-hollows-74511.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

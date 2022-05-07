@@ -4,16 +4,11 @@ import useReload from '../../hooks/useReload';
 import Product from '../Product/Product';
 import './Products.css'
 import { BsArrowRight } from 'react-icons/bs';
+import useProduct from '../../hooks/useProduct';
 
 const Products = () => {
-    const [products, setProducts] = useState([])
-    const [isReload, setIsReload] = useReload();
-    useEffect(() => {
-        // fetch('http://localhost:5000/product')
-        fetch('http://localhost:5000/product')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [isReload])
+    const [products] = useProduct()
+    
     return (
         <div className='products pb-5'>
             <div className='container'>
