@@ -6,12 +6,13 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCyfK8g-h1tREBt0xDnSWL1JszjR57gkB4",
-  authDomain: "tiles-warehouse-management.firebaseapp.com",
-  projectId: "tiles-warehouse-management",
-  storageBucket: "tiles-warehouse-management.appspot.com",
-  messagingSenderId: "914406766365",
-  appId: "1:914406766365:web:54fea43361fae608ce53f4"
+
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
