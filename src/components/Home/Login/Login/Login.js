@@ -27,6 +27,7 @@ const Login = () => {
         passwordError: ""
     })
 
+    // get email field and validation 
     const handleEmailField = e => {
         const emailInput = e.target.value;
         const emailRegx = /\S+@\S+\.\S+/;
@@ -39,6 +40,7 @@ const Login = () => {
             setUserData({ ...userData, email: "" })
         }
     }
+    // get password and validation check 
     const handlePasswordField = e => {
         const passwordInput = e.target.value;
         if (passwordInput.length >= 6) {
@@ -51,6 +53,7 @@ const Login = () => {
         }
     }
 
+    // submit login 
     const handleSubmitLogin = async e => {
         e.preventDefault();
         const email = userData.email;

@@ -35,7 +35,6 @@ const ManageSingleIn = ({ product }) => {
                 <td>{name}</td>
                 <td>{price}</td>
                 <td>{quantity}</td>
-                {/* <td>{supplierName}</td> */}
                 <td><button className='bg-danger text-white border-0 rounded' onClick={() => handleDeleteBtn(_id)}>Delete</button></td>
             </tr>
         </>

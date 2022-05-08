@@ -6,10 +6,12 @@ import { BsArrowRight } from 'react-icons/bs';
 const Product = ({ product }) => {
     const { _id, name, img, description, price, quantity, supplierName
     } = product;
+
     const navigate = useNavigate();
     const navigateToInventory = id => {
         navigate(`/inventory/${id}`)
     }
+
     return (
         <div className="col">
             <div className="card h-100 text-center text-white product-card pt-2">
@@ -18,8 +20,8 @@ const Product = ({ product }) => {
                     <h5 className="card-title">{name}</h5>
                     <p style={{ color: '#94A3B8' }} className="card-text pb-2">{description}</p>
                     <div className='d-flex justify-content-between'>
-                    <p style={{ marginTop: '-15px' }}>Quantity: {quantity}</p>
-                    <h2 style={{ marginTop: '-15px' }}>${price}</h2>
+                        <p style={{ marginTop: '-15px' }}>Quantity: {quantity}</p>
+                        <h2 style={{ marginTop: '-15px' }}>${price}</h2>
                     </div>
 
                     <button className='update-btn' onClick={() => navigateToInventory(_id)}>Update <BsArrowRight></BsArrowRight></button>

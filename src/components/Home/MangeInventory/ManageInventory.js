@@ -17,7 +17,6 @@ const ManageInventory = () => {
                         <th>Product Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        {/* <th>Supplier</th> */}
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -27,12 +26,10 @@ const ManageInventory = () => {
                             key={product._id}
                             product={product}
                         >
-
                         </ManageSingleIn>)
                     }
                 </tbody>
             </Table>
-
             <Link className='primary-btn' to='/addItem'>Add New Inventory</Link>
         </div>
     );

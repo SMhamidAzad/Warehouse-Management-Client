@@ -26,6 +26,7 @@ const SignUp = () => {
         passwordError: ""
     })
 
+    // get email, password and confirm password and validation check 
     const handleEmailField = e => {
         const emailInput = e.target.value;
         const emailRegx = /\S+@\S+\.\S+/;
@@ -72,13 +73,15 @@ const SignUp = () => {
             return <Loading></Loading>
         }
     },[])
+
+    // create user 
     const handleSubmitSignUp = e => {
         e.preventDefault();
         createUserWithEmailAndPassword(userData.email, userData.password)
     }
+    // error from firebase 
     useEffect(()=>{
         if(error){
-            // console.log(error.message);
             toast.error(error.message,{
                 position: "top-center",
             })

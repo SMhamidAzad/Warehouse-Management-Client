@@ -19,9 +19,7 @@ const MyItem = ({ myitem }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        console.log('deleted');
                         const remaining = products.filter(product => product._id !== id);
-
                         setProducts(remaining);
                     }
                 })

@@ -59,10 +59,10 @@ const Inventory = () => {
                     <div className="col-md-8">
                         <h5>{product.name}</h5>
                         <p>{product.description}</p>
+                            <p>Id: {product._id}</p>
                         <div className='d-flex'>
                             <p className='fw-bold pe-3'>Quantity: {product.quantity}</p>
                             <p className='fw-bold pe-3'>Price: {product.price}</p>
-                            <p>Id: {product._id}</p>
                         </div>
                         <button style={{ marginTop: '-10px' }} className='update-btn mb-3' onClick={() => handleDelivered()}>Delivered</button>
                         <form className='form-style' onSubmit={handleUpdateQuantity}>
