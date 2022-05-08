@@ -15,12 +15,25 @@
 }
 
 .price-first-part {
+    font-weight: 700;
     font-size: 40px;
 }
 
 .price-last-part {
-    font-size: 32px;
+    font-size: 22px;
+    color: #94A3B8;
+    font-weight: 900;
 }
+.parallelogram {
+    padding-left: 20px;
+    width: 400px;
+    height: 70px;
+    transform: skew(-20deg);
+    background: #042131;
+    margin-top: 65px;
+    color: white;
+    border: 1px solid #F2A70C;
+  }
 @media screen and (max-width: 688px) {
   .recommanded-img{
       text-align: center;

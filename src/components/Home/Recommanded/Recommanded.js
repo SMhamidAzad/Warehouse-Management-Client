@@ -28,9 +28,10 @@ const Recommanded = () => {
                                         <small className='btn me-1'>Project</small>
                                         <small className='btn me-1'>Construction</small>
                                     </div>
-                                    <div className='price-div'>
-                                        <small className='price-first-part'>$53.00 - $60.00</small>
-                                        <small className='price-last-part'> /Piece</small>
+                                    <div className='parallelogram'>
+                                        
+                                        <small className='price-first-part'>$25.00 - $65.00</small>
+                                        <small className='price-last-part'> /   piece</small>
                                     </div>
                                 </div>
                             </div>
@@ -48,9 +49,10 @@ const Recommanded = () => {
                                         <small className='btn me-1'>Project</small>
                                         <small className='btn me-1'>Construction</small>
                                     </div>
-                                    <div className='price-div'>
-                                        <small className='price-first-part'>$45.00 - $80.00</small>
-                                        <small className='price-last-part'> /Piece</small>
+                                    <div className='parallelogram'>
+                                        
+                                        <small className='price-first-part'>$53.00 - $80.00</small>
+                                        <small className='price-last-part'> /   piece</small>
                                     </div>
                                 </div>
                                
@@ -71,9 +73,10 @@ const Recommanded = () => {
                                         <small className='btn me-1'>Project</small>
                                         <small className='btn me-1'>Construction</small>
                                     </div>
-                                    <div className='price-div'>
+                                    <div className='parallelogram'>
+                                        
                                         <small className='price-first-part'>$33.00 - $70.00</small>
-                                        <small className='price-last-part'> /Piece</small>
+                                        <small className='price-last-part'> /   piece</small>
                                     </div>
                                 </div>
                                 
@@ -90,6 +93,7 @@ const Recommanded = () => {
                     </button>
                 </div>
             </div>
+            
         </div>
     );
 };

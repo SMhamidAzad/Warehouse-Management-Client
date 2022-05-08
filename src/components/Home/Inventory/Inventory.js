@@ -60,14 +60,14 @@ const Inventory = () => {
                         <h5>{product.name}</h5>
                         <p>{product.description}</p>
                         <div className='d-flex'>
-                        <p className='fw-bold pe-3'>Quantity: {product.quantity}</p>
-                        <p className='fw-bold pe-3'>Price: {product.price}</p>
-                        <p>Id: {product._id}</p>
+                            <p className='fw-bold pe-3'>Quantity: {product.quantity}</p>
+                            <p className='fw-bold pe-3'>Price: {product.price}</p>
+                            <p>Id: {product._id}</p>
                         </div>
-                        <button style={{marginTop: '-10px'}}  className='update-btn mb-3' onClick={() => handleDelivered()}>Delivered</button>
+                        <button style={{ marginTop: '-10px' }} className='update-btn mb-3' onClick={() => handleDelivered()}>Delivered</button>
                         <form className='form-style' onSubmit={handleUpdateQuantity}>
                             <p >Do you want undate your product quantity?</p>
-                            <input  type="text" name="quantity" id="" placeholder='Enter your quantity' />
+                            <input type="text" name="quantity" id="" placeholder='Enter your quantity' />
                             <button className='update-btn py-2 btn '>Update Quantity</button>
                         </form>
                     </div>
