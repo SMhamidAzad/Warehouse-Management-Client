@@ -5,15 +5,6 @@
     background-color: #F2A70C;
 }
 
-.price-div {
-    margin-top: 65px;
-    background-color: white;
-    padding-left: 20px;
-    font-weight: 700;
-    margin-right: 50px;
-    color: #94A3B8;
-}
-
 .price-first-part {
     font-weight: 700;
     font-size: 40px;
@@ -44,5 +35,17 @@
   .price-div{
       font-size: 30px;
       margin-bottom: 20px;
+  }
+  .price-first-part{
+      font-size: 30px;
+  }
+  .price-last-part{
+      font-size: 19px;
+  }
+  .parallelogram{
+    padding-left: 10px;
+    margin-bottom: 35px;
+    width: 300px;
+    height: 60px;
   }
 }

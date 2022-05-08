@@ -3,7 +3,7 @@ import './Blogs.css'
 
 const Blogs = () => {
     return (
-        <div style={{ height: '90vh', backgroundColor: '#021B29' }} className="row row-cols-1 row-cols-md-3 g-4 m-0">
+        <div style={{ height: '90vh', backgroundColor: '#021B29' }} className="row row-cols-1 row-cols-md-3 g-4 m-0 blogs">
             <div className="col">
                 <div style={{backgroundColor: '#0A2E43'}} className="card mt-5 border-0 blog">
                     <div className="card-body">

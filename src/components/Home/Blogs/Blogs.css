@@ -2,7 +2,12 @@
     height: 60%;
 }
 @media screen and (max-width: 688px) {
-    .blog{
-        height: 90%;
+    .blogs{
+        height: 200vh !important; 
     }
+    .blog{
+        height: 75% !important;
+        margin-bottom: -20px !important;
+    }
+   
 }

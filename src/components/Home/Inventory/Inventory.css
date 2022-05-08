@@ -1,6 +1,6 @@
 .inventory-container{
     background-color: #021B29;
-    height: 90vh;
+    min-height: 90vh;
 }
 .inventory{
     background-color: #0A2E43;
@@ -11,7 +11,7 @@
 }
 @media screen and (max-width: 688px) { 
     .inventory-container{
-        height: 100vh;
+        height: 200vh !important;
     }
     .inventory{
         text-align: center;
