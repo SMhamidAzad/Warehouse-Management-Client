@@ -9,11 +9,9 @@ import './Header.css'
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
-  useEffect(() => {
-    if (loading) {
-      return <Loading></Loading>
-    }
-  }, [])
+  if(loading){
+    return <Loading></Loading>
+  }
   return (
     <Navbar className='nav-style' collapseOnSelect expand="lg" >
       <Container>

@@ -54,10 +54,9 @@ const Login = () => {
     const handleSubmitLogin = async e => {
         e.preventDefault();
         const email = userData.email;
-        // console.log(email);
+        console.log(email);
         await signInWithEmailAndPassword(userData.email, userData.password)
         const { data } = await axios.post('https://blooming-hollows-74511.herokuapp.com/gettoken', { email })
-        console.log(data);
         localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
     }

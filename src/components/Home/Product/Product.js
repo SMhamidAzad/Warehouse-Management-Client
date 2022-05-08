@@ -17,8 +17,10 @@ const Product = ({ product }) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <p style={{ color: '#94A3B8' }} className="card-text pb-2">{description}</p>
+                    <div className='d-flex justify-content-between'>
                     <p style={{ marginTop: '-15px' }}>Quantity: {quantity}</p>
                     <h2 style={{ marginTop: '-15px' }}>${price}</h2>
+                    </div>
 
                     <button className='update-btn' onClick={() => navigateToInventory(_id)}>Update <BsArrowRight></BsArrowRight></button>
                 </div>
