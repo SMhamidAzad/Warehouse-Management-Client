@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Home/Loading/Loading';
 import './Header.css'
+import { FcMenu } from 'react-icons/fc';
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -18,7 +19,9 @@ const Header = () => {
         <Navbar.Brand className='text-white fw-bold fs-2'>
           ₱rime door pro.
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" >
+          <FcMenu></FcMenu>
+        </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link className='text-white anchor' as={Link} to='/'>Home</Nav.Link>
