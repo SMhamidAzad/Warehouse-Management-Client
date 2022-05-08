@@ -14,8 +14,14 @@ import ManageInventory from './components/Home/MangeInventory/ManageInventory';
 import AddInventory from './components/Home/AddInventory/AddInventory';
 import MyItems from './components/Home/MyItems/MyItems';
 import 'react-toastify/dist/ReactToastify.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 function App() {
 
+  useEffect(()=>{
+    AOS.init()
+  },[])
   return (
     <div>
       <Header></Header>
