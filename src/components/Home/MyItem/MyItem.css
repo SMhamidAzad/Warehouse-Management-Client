@@ -5,3 +5,9 @@
     border-radius: 15px;
     color: white;
 }
+@media screen and (max-width: 688px) {
+    .my-item{
+       width: 96%;
+       margin-left: 2%;
+    }
+}

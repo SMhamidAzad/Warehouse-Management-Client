@@ -23,17 +23,19 @@ Project Site Link [Prime Door Pro.](https://tiles-warehouse-management.web.app/)
  ## List of used Technology
   
   ### for Client Site 
-  1. React
-  2. React Router
-  3. React Bootstrap
-  4. React Tostify
-  5. React Icons
-  6. Firebase
-  7. React Firebase Hooks
+  * React
+  * React Router
+  * React Bootstrap
+  * React Tostify
+  * React Icons
+  * Firebase
+  * React Firebase Hooks
+  * Axios
 
   ### for Server Site
-  1. Express
-  2. Cors
-  3. Mongodb
-  4. Dotenv
+  * Express
+  * Cors
+  * Mongodb
+  * Dotenv
+  * Jsonwebtoken
   

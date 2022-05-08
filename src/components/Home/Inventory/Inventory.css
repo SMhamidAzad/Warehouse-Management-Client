@@ -1,6 +1,6 @@
 .inventory-container{
     background-color: #021B29;
-    height: 100vh;
+    height: 90vh;
 }
 .inventory{
     background-color: #0A2E43;
@@ -8,4 +8,13 @@
 }
 .inventory-pic{
     border: 4px solid #F2A70C;
+}
+@media screen and (max-width: 688px) {
+    .inventory-container{
+        height: 100vh;
+        padding-bottom: 50px;
+    }
+    .inventory{
+        text-align: center;
+    }
 }

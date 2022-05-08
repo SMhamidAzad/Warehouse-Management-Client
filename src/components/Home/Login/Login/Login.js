@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -17,7 +17,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const [userData, setUserData] = useState({
         email: "",
         password: ""
@@ -61,6 +61,21 @@ const Login = () => {
         localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
     }
+    // password reset 
+    const passwordReset = async () => {
+        const email = userData.email;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast.success('Please check your email and reset password',{
+                position: 'top-center'
+            });
+        }
+        else {
+            toast.error('Please input your email address',{
+                position: 'top-center'
+            });
+        }
+    }
 
     const navigate = useNavigate();
     const location = useLocation()
@@ -92,11 +107,11 @@ const Login = () => {
                     <div className='login-line'></div>
                 </div>
                 <form className='form-style' onSubmit={handleSubmitLogin}>
-                    <input onChange={handleEmailField} type="email" name="email" id="" placeholder='Name' />
+                    <input onChange={handleEmailField} type="email" name="email" id="" placeholder='Name' required />
                     <br />
                     {errors?.emailError && <p className='text-danger'>❌ {errors.emailError}</p>}
                     <br />
-                    <input onChange={handlePasswordField} type="password" name="password" id="" placeholder='Password' />
+                    <input onChange={handlePasswordField} type="password" name="password" id="" placeholder='Password' required/>
                     <br />
                     {errors?.passwordError && <p className='text-danger'>❌{errors.passwordError}</p>}
                     <br />
@@ -107,6 +122,15 @@ const Login = () => {
                             Sign Up Here</Link>
                         <input className='primary-btn' type="submit" value="Login" />
                     </div>
+                    <br />
+                    <p style={{color: '#94A3B8'}}>
+                    Forget Password?
+                    <button style={{backgroundColor: '#01151F'}}
+                        onClick={passwordReset} 
+                        className='border-0 fw-bolder text-white'>
+                            Reset Password
+                    </button>
+                </p>
                 </form>
                 <div className='mt-5'>
                     <div className='d-flex justify-content-center mt-4'>
